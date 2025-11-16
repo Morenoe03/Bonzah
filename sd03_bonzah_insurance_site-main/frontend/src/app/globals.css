@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root{
+  /* Primary */
+  --color-pink: #E20082;
+  --color-bg:   #F6ECF2;
+  --color-white:#FFFFFF;
+  --color-black:#1D1E29;
+
+  /* Secondary */
+  --color-dark-pink: #A01E69;
+  --color-medium:    #FF58B8;
+  --color-light-pink:#F6D8EA;
+  --color-dark-grey: #7D6C76;
+  --color-light-grey:#9F9099;
+}
+
+.tester {
+  color: red;
+};
+
+.backgroundLighter {
+  background-color: #F6ECF2;
+}
+
+html, body {
+  font-family: var(--font-raleway), system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+.btn-primary{
+  @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-white;
+  background: var(--color-pink);
+}
+.btn-primary:hover{ background: var(--color-dark-pink); }
+
+.section{
+  @apply max-w-6xl mx-auto px-4 py-12;
+  background: var(--color-bg);
+}
+
+.card{
+  @apply rounded-2xl border p-6;
+  border-color: color-mix(in srgb, var(--color-black) 10%, transparent);
+  background: var(--color-white);
+}
+
+.h2{ @apply text-2xl font-semibold mb-6; color: var(--color-black); }
+
+.muted{ color: var(--color-dark-grey); }
+
+/* Infinite horizontal scroll */
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* duplicates make a seamless loop */
+}
+
+.marquee { overflow: hidden; }
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 0rem;                 /* spacing between logos; adjust as needed */
+  width: max-content;
+  animation: marquee-x 27s linear infinite; /* scroll speed */
+}
+
+/* No pause on hover anymore. If you previously added it, remove it:
+.marquee:hover .marquee-track { animation-play-state: paused; }
+*/
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation-duration: 0.001ms; animation-iteration-count: 1; }
+}
+
+
+
+
