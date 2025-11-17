@@ -1,13 +1,13 @@
 'use client'
+/// <reference types="react" />
 
+import React from 'react';
 import Header from "../globals/header";
 import Footer from "../globals/footer";
 import Title from "./title";
 import AboutUs from "./aboutUs";
 import BonzahOpinion from "./bonzahOpinon";
 import GetInsurance from "./getInsurance";
-
-import { useState } from "react";
 
 {/*This is a temp set up. we need to add it so it takes in an "insurance Copmant" object. 
     The idea being that all you need is a Company Name, Image. Maybe we send through the about
